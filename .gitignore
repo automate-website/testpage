@@ -1,0 +1,12 @@
+.DS_Store
+bower_components/
+node_modules/
+npm-debug.log
+
+.idea/
+
+# Public
+public/css/
+public/js/vendor.js
+
+dist/

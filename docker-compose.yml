@@ -1,0 +1,14 @@
+version: '2'
+
+services:
+
+  app:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    ports:
+      - 3000:3000
+    volumes:
+      - ./public:/usr/var/app/public
+    environment:
+      NODE_PORT: 3000
