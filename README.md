@@ -6,4 +6,4 @@ To execute locally run:
 
     $ docker-compose up
   
-Then, open [http://localhost:3000]() in your browser.
+Then, open [http://localhost:80]() in your browser.

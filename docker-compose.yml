@@ -7,8 +7,8 @@ services:
       context: .
       dockerfile: ./Dockerfile
     ports:
-      - 3000:3000
+      - 80:80
     volumes:
       - ./public:/usr/var/app/public
     environment:
-      NODE_PORT: 3000
+      NODE_PORT: 80
