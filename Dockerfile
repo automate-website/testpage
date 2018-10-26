@@ -1,6 +1,6 @@
 FROM node:argon
 
-ENV NODE_PORT 3000
+ENV NODE_PORT 80
 
 WORKDIR /usr/var/app
 
@@ -10,6 +10,6 @@ VOLUME /usr/var/app/public
 
 RUN npm install
 
-EXPOSE 3000
+EXPOSE ${NODE_PORT}
 
 CMD [ "node", "--use_strict", "src/server.js" ]
