@@ -5,12 +5,28 @@ const path = require('path');
 
 const app = express();
 
+const multer  = require('multer')
+const uploadDir='/usr/var/app/upload'
+const storage = multer.diskStorage({
+  filename: function (req, file, cb) {
+    cb(null, file.originalname)
+  },
+  destination: function (req, file, cb) {
+    cb(null, uploadDir)
+  }
+})
+const upload = multer({ storage: storage })
+
 app.use(morgan('combined'));
 
 const serve = serveStatic(path.join(__dirname, '../public'), { 'index': ['index.html', 'index.htm'] });
 app.use('/', serve);
 
 app.get('/healthcheck',function (req, res) {
+  res.send('OK');
+});
+
+app.post('/upload/single', upload.single('file'), function (req, res, next) {
   res.send('OK');
 });
 
